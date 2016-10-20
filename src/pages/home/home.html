@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+        Kittens!
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let kitten of kittens" (click)="viewItem(kitten)">
+      <ion-avatar item-left>
+        <img src="{{kitten.url}}">
+      </ion-avatar>
+      <h4>{{kitten.name}}</h4>
+      <h5>{{kitten.bio}}</h5>
+    </ion-item>
+  </ion-list>
+</ion-content>
